@@ -20,6 +20,13 @@ This means that by writing three files, you can support any format you need. If 
 This project does not guarantee that resulting files will be as desired or even valid. While I am trying hard to write formats, it's not the easiest thing in the world.
 Error checking is minimal, and successful completion of a converter does not guarantee validity. I live by the simple moto: Garbage In, Garbage out.
 
+Current file formats supported (only INI and JSON at time of writing) are processed line by line and maintain little state. 
+This can limit certain features or prevent a format from processing properly. Future versions will attempt to address this.
+
+Converting flat files (lacking heirarchy. eg. INI or CSV) to those that have multiple levels (JSON or XML) is simple and intuitive, 
+but going in the opposite direction is tricky if not impossible. 
+I intend to suport such conversions (or try at least), but make no promises on the resulting file, its usability, or anything else.
+
 
 Eventually, I intend to write parsers for many different types of formats (structured data/audio/video/PE/ELF/etc.).
 Each of these formats will have different needs for handling and therefore different functions. While this is intended to be a "universal file converter",
