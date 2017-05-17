@@ -13,8 +13,17 @@ it knows what formats it needs to support.
 
 ## How?
 By using Flex and Bison, you can quickly create a parser for any structured (not entirely random) format.
-The output format will be produced using a set of functions. These functions have specific names, so that any format can be chosen and linked.
-This means that by writing three files, you can support any format you need. If you only need to convert one way, then you only need to write those files.
+The output format will be produced using a set of functions.
+These functions have specific names, so that any format can be chosen and linked.
+This means that by writing three files, you can support any format you need.
+If you only need to convert one way, then you only need to write those files.
+
+1. Compile the input flex and bison files into an object file.
+This can be used in step 3 with any other (compatible) format.
+2. Compile the output format using the appropriate compiler (C/C++/some other compiled language) into an object file.
+3. link the object files produced into an executable.
+
+Note: a script to automate this process is in the works.
 
 ## Notes And Disclaimers
 - This project does not guarantee that resulting files will be as desired or even valid. While I am trying hard to write formats, it's not the easiest thing in the world.
