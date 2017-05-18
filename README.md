@@ -25,10 +25,21 @@ This can be used in step 3 with any other (compatible) format.
 
 Note: a script to automate this process is in the works.
 
-## Notes And Disclaimers
-- This project does not guarantee that resulting files will be as desired or even valid. While I am trying hard to write formats, it's not the easiest thing in the world.
-Error checking is minimal, and successful completion of a converter does not guarantee validity. I live by the simple moto: Garbage In, Garbage out.
+## NON-Guarentees
+This projects does NOT guarentee any of the following:
+- output files will be valid and error free
+- output files will match your expectations or be suitable for your needs
+- All valid input files will be parsed succesfully
+- Invalid input files will fail to parse. (Some may parse entirely despite syntax errors)
+- Any desired converter will compile correctly. (Linker errors will probably be common.)
+- The format you desire is supported. (It's OSS. If I havent written it, you can.)
+- This will compile for you. (developed with: GNU/LINUX 4.9.17 -- GCC 4.8.4)
+- This project works at all.
 
+ Of course, I'm doing my best to meet these points, but I cannot/will not promise anything.
+ This is provided "AS-IS". Pull requests welcome.
+
+## Notes And Disclaimers
 - Current file formats supported (only INI and JSON at time of writing) are processed line by line and maintain little state.
 This can limit certain features or prevent a format from processing properly. Future versions will attempt to address this.
 
@@ -52,4 +63,3 @@ If you need/desire such conversions then:
 
 If you would like help with that, I would be willing to assist. 
 But this project is still very young and lacks many basic formats to begin with.
-
