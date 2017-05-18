@@ -40,7 +40,6 @@ assigns: assigns assignment
        ;
 
 assignment: STRING EQ STRING { AssignStr($1, $3); }
-          | STRING EQ QUOTE  { AssignQuoted($1, $3); }
           | STRING EQ FLOAT  { AssignFloat($1, $3); }
           | STRING EQ INT    { AssignInt($1, $3); }
           ;
