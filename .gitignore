@@ -1,0 +1,3 @@
+temp/
+lex.yy.c
+*.tab.c
