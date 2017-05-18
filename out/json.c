@@ -3,6 +3,11 @@
 //globals
 int RS = 0;
 
+/* RS - Record seperator.
+each record/field ends with a comma, except the last one in a given scope.
+This was previously handled with printing backspaces which isnt a good idea.
+*/
+
 //json functions
 //-----------------
 void AssignStr(char* key, char* value) {
