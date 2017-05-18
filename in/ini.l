@@ -14,15 +14,15 @@ String          ({alnum}|" "|{sym})*({alnum}|{sym})
 QuotedString    \"{String}\"
 %%
 
-^;.*$               { ; } // comments
-\[{String}+\]       { yylval.sval = strdup(stripQuotes(yytext)); return START_OBJ; }
-{Float}             { yylval.fval = atof(yytext); return FLOAT; }
-{digit}+            { yylval.ival = atoi(yytext); return INT; }
-{QuotedString}      { yylval.sval = strdup(stripQuotes(yytext)); return STRING; }
-{String}            { yylval.sval = strdup(yytext); return STRING; }
-"="                 { return EQ; }
-[ \t\n]             { ; } //strip whitespace
-.                   { printf("lexxer error! (%s)\n", yytext); exit(127); }
+^;.*$                   { ; } // comments
+\[{String}+\]           { yylval.sval = strdup(stripQuotes(yytext)); return START_OBJ; }
+{Float}                 { yylval.fval = atof(yytext); return FLOAT; }
+{digit}+                { yylval.ival = atoi(yytext); return INT; }
+{QuotedString}|"\"\""   { yylval.sval = strdup(stripQuotes(yytext)); return STRING; }
+{String}                { yylval.sval = strdup(yytext); return STRING; }
+"="                     { return EQ; }
+[ \t\n]                 { ; } //strip whitespace
+.                       { printf("lexxer error! (%s)\n", yytext); exit(127); }
 
 %%
 
